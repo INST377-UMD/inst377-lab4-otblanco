@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="INST377-Lab4-CSS.css">
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header>
+            <h1 id="page-heading">INST377 - Lab 4</h1>
+        </header>
+
+        <!-- Container for the Sections -->
+        <div class="container">
+            <!-- Alert Me Section -->
+            <div class="alert section">
+                <form id="alertForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <button type="button" onclick="alertName()">Alert Me!</button>
+                </form>
+            </div>
+
+            <!-- Change Color Section -->
+            <div class="color section">
+                <button onclick="changeColor()">Change Color</button>
+            </div>
+
+            <!-- Clear floats after the first row -->
+            <div class="clear"></div>
+
+            <!-- Text Tester Section -->
+            <div class="tester section">
+                <form id="textForm">
+                    <label for="tester">Text Tester:</label>
+                    <input type="text" id="tester">
+                    <button type="button" onclick="validateText()">Validate Text</button>
+                </form>
+            </div>
+
+            <!-- Add Text Section -->
+            <div class="text section">
+                <button onclick="addText()">Add Text</button>
+            </div>
+
+            <!-- Clear floats after the second row -->
+            <div class="clear"></div>
+        </div>
+
+        <!-- JavaScript -->
+        <script type="text/javascript">
+            //  Alert Me Section
+            function alertName() {
+                const name = document.getElementById('name').value;
+                if (name) {
+                    alert(`Hi ${name}!`);
+                } else {
+                    alert('Please enter your name.');
+                }
+            }
+
+            // Change Color Section
+            let isBlue = true;
+            function changeColor() {
+                if (isBlue) {
+                    document.body.style.backgroundColor = 'green';
+                } else {
+                    document.body.style.backgroundColor = 'blue';
+                }
+                isBlue = !isBlue;
+            }
+
+            // Text Tester Section
+            function validateText() {
+                const input = document.getElementById('tester').value;
+                const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(input)) {
+                    alert('Nu-uh! Try Again!');
+                } else {
+                    alert('Text is valid!');
+                }
+            }
+
+            // Add Text Section
+            function addText() {
+                const heading = document.getElementById('page-heading');
+                heading.innerHTML += ' Add Text';
+            }
+        </script>
+    </body>
+</html>

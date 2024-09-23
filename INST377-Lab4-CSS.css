@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:blue;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+}
+
+/* Each section with common styles */
+.section {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    background-color:blanchedalmond;
+    width: 45%; /* Each section takes 45% of the width */
+    float: left;
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+
